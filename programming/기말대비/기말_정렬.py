@@ -17,3 +17,9 @@ def bubble(list):
                 list[k] , list[k+1] = list[k+1] , list[k]  # 이러면 오름차순으로 리스트가 정렬됨 # 만약에 같은 숫자가 리스트에 있더라도 무시하고 지나감
 # 버블정렬은 필터가 리스트위를 다닌다고 생각하고 필터에 따라 거품이 올라오는 식으로 정렬된다는 것을 알고 있자 
 
+# 퀵정렬 
+def quick(list):
+    if len(list) <= 1: return list
+    left , middle , right = [x for x in list if x < list[-1]] , [x for x in list if x == list[-1]] , [x for x in list if x > list[-1]]
+    return quick(left) + middle + quick(right)
+
